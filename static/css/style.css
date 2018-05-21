@@ -2328,7 +2328,8 @@ span.glyphicon.glyphicon-user {
         margin-bottom: 2em;
     }
     .slider-top-grids {
-        width: 33.33% !important;
+        /* width: 33.33% !important; */
+        width: 49.33% !important;
         float: left !important;
     }
     .side-bottom {

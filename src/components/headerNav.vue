@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="index.html">
-                <h1><img src="../assets/logo.png" alt="Highly_Logo" height="49" /></h1>
+                <h1><img src="../../static/images/logo.png" alt="Highly_Logo" width="153" height="49" /></h1>
             </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -20,11 +20,11 @@
                 <input type="submit" value=" ">
             </form>
         </div>
-         <div class="header-top-right">
+         <!-- <div class="header-top-right">
             <div class="file">
               <a href="upload.html">Upload</a>
             </div>
-        </div>
+        </div> -->
       </div>
       
       <div class="clearfix"> </div>
@@ -46,8 +46,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a.navbar-brand {
-    padding: 0 0 0 1em;
+
+@media (min-width: 991px) { 
+    a.navbar-brand {
+    /* padding: 0 0 0 1em; */
+    padding:0 0 0.4em 1.8em;
+    }
 }
 
 nav.navbar.navbar-inverse.navbar-fixed-top {
@@ -96,7 +100,24 @@ form.navbar-form.navbar-right {
     top: 9px;
     right: 26px;
 }
-
+@media (max-width: 640px) {
+.top-search form input[type="submit"] {
+    right: 26px;
+    top: 18px;
+    }
+form.navbar-form.navbar-right {
+        width:60%;
+    }
+}
+@media (max-width: 767px) {
+.top-search form input[type="submit"] {
+    right: 26px;
+    top: 18px;
+    } 
+form.navbar-form.navbar-right {
+        width:60%;
+    }
+}
 .header-top-right {
     float: right;
 }
