@@ -54,6 +54,14 @@ export default {
     }
 }
 
+.navbar-brand {
+    float: left;
+    /* height: 50px; */
+    padding:0 0 0 25px !important;
+    font-size: 18px;
+    line-height: 20px;
+}
+
 nav.navbar.navbar-inverse.navbar-fixed-top {
     padding: 1.5em 0;
     background: #FFF;
@@ -105,17 +113,15 @@ form.navbar-form.navbar-right {
     right: 26px;
     top: 18px;
     }
-form.navbar-form.navbar-right {
-        width:60%;
-    }
 }
 @media (max-width: 767px) {
 .top-search form input[type="submit"] {
-    right: 26px;
-    top: 18px;
+    right:26px;
+    top:18px;
     } 
 form.navbar-form.navbar-right {
-        width:60%;
+        width:100%;
+        margin:0 auto;
     }
 }
 .header-top-right {

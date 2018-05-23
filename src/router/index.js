@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import finance from '@/components/main/finance'
 import home from '@/components/main/home'
 import payables from '@/components/main/payables'
 import processing from '@/components/main/processing'
@@ -14,11 +13,6 @@ export default new Router({
             path: '/',
             name: 'home',
             component: home
-        },
-        {
-            path: '/finance',
-            name: 'finance',
-            component: finance
         },
         {
             path: '/payables',

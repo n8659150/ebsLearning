@@ -3,23 +3,23 @@
   <div class="col-sm-3 col-md-2 sidebar">
         <div class="top-navigation">
             <div class="t-menu">MENU</div>
-            <div class="t-img">
+            <div class="t-img" @click="toggleNav(isNavOpen)">
                 <img src="../assets/lines.png" alt="" />
             </div>
             <div class="clearfix"> </div>
         </div>
-        <div class="drop-navigation drop-navigation">
+        <div class="drop-navigation drop-navigation" v-show="isNavOpen === true">
             <ul class="nav nav-sidebar">
                 <li v-for="(menuItem,key) in menuItems" :key="key" :class="currentUrl === menuItem['menuUrl'] ? 'active':''" @click="activeMenu(menuItems,key)">
                     <router-link :to="menuItem['menuUrl']" class="user-icon">
                         <span class="glyphicon icon_margin" :class="menuItem['icon']" aria-hidden="true"></span>{{menuItem['name']}}
-                        <span v-if="menuItem['child']" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        <!-- <span v-if="menuItem['child']" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> -->
                     </router-link>
-                    <ul class="subMenu">
+                    <!-- <ul class="subMenu">
                         <li v-for="(subItem,key) in menuItem['child']" :key="key" :class="currentUrl === subItem['menuUrl'] ? 'active':''" @click="activeMenu(menuItem['child'],key)">
                             <router-link :to="subItem['menuUrl']">{{subItem['name']}}</router-link>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <!-- sub menu -->
                     
@@ -34,41 +34,40 @@ export default {
   name: "sideBar",
   data() {
     return {
+      isNavOpen:true,
       menuItems: [
         {
           name: "Home",
-          child: null,
           icon: "glyphicon-home",
           menuUrl: "/",
           active: true
         },
         {
           name: "Purchases",
-          child: null,
           icon: "glyphicon-blackboard",
           menuUrl: "/purchases",
           active: false
         },
         {
           name: "Sales",
-          child: null,
           icon: "glyphicon-king",
           menuUrl: "/sales",
           active: false
         },
         {
-          name: "Finance",
-          child: [
-            { name: "Payables", menuUrl: "/payables", active: false },
-            { name: "Receivables", menuUrl: "/receivables", active: false }
-          ],
+          name: "Payables",
           icon: "glyphicon-hourglass",
-          menuUrl: "/finance",
+          menuUrl: "/Payables",
+          active: false
+        },
+        {
+          name: "Receivables",
+          icon: "glyphicon-list-alt",
+          menuUrl: "/Receivables",
           active: false
         },
         {
           name: "Processing",
-          child: null,
           icon: "glyphicon-asterisk",
           menuUrl: "/processing",
           active: false
@@ -90,6 +89,10 @@ export default {
       });
 
       whichMenu[whichOne]["active"] = true;
+    },
+    toggleNav(){
+      this.isNavOpen = !this.isNavOpen;
+      console.log(this.isNavOpen);
     }
   },
   mounted() {
@@ -103,19 +106,21 @@ export default {
 .sidebar {
   top: 80px;
   background: #272c2e;
-  border: none;
-  padding: 20px;
-  padding: 20px;
 }
 .icon_margin {
   margin: 0 2em 0 0;
   font-size: 16px !important;
 }
-.nav-sidebar ul.cl-effect-1 li,
+@media (min-width: 992px) {
+  .drop-navigation {
+    display:block !important;
+  }
+}
+/* .nav-sidebar ul.cl-effect-1 li,
 .nav-sidebar ul.subMenu li a {
   color: #bbb;
 }
 ul.nav.nav-sidebar ul.subMenu li.active a {
   color: #21deef !important;
-}
+} */
 </style>

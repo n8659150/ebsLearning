@@ -4,7 +4,7 @@
             <div class="top-grids">
               <div class="recommended-info">
                     <h3>Most Viewed</h3>
-                </div>
+               </div>
                 <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
                     <div class="resent-grid-img recommended-grid-img">
                         <a href="single.html"><img src="../../assets/BOM001.jpg" alt="" /></a>

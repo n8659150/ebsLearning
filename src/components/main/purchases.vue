@@ -5,18 +5,20 @@
               <div class="recommended-info">
                     <h3>Purchases</h3>
                 </div>
-                <div v-for="(source,key) in source_dataset" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                    <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img :src="source['poster']" :alt="source['title']" /></a>
-                        <div class="time" style="color:#000;">
-                            <p>{{source['length']}}</p>
+                <div class="flex-wrap"> 
+                    <div v-for="(data,key) in purchases_dataset" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
+                        <div class="resent-grid-img recommended-grid-img">
+                            <a href="single.html"><img :src="data['poster']" :alt="data['title']" /></a>
+                            <div class="time" style="color:#000;">
+                                <p>{{data['length']}}</p>
+                            </div>
+                            <!-- <div class="clck" style="color:#000;">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div> -->
                         </div>
-                        <!-- <div class="clck" style="color:#000;">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div> -->
-                    </div>
-                    <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">{{source['title']}}</a></h3>
+                        <div class="resent-grid-info recommended-grid-info">
+                            <h3><a href="single.html" class="title title-info">{{data['title']}}</a></h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,16 +27,20 @@
 </template>
 
 <script>
-import purchases_data from '../../video_source_config/purchases.js'
+// import purchases_data from '../../video_source_config/purchases.js'
 export default {
   name: 'purchases',
   data () {
     return {
-      source_dataset: ''
+      purchases_dataset: ''
     }
   },
   mounted(){
-      this.source_dataset = purchases_data;
+    this.$http.get('http://localhost:3000/purchases').then((response)=>{
+        this.purchases_dataset = response.body;
+    },(error) =>{
+        console.log(error);
+    })
   }
 }
 </script>

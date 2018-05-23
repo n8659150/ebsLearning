@@ -59,9 +59,9 @@ ul.nav.nav-sidebar li.active a {
 
 ul.nav.nav-sidebar li a {
     color: #BBBBBB;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
-    padding: .8em 0 .8em 3em;
+    /* padding: .8em 0 .8em 3em; */
 }
 
 .main-grids {
@@ -2159,7 +2159,7 @@ span.glyphicon.glyphicon-user {
         margin: .5em 0;
     }
     .sidebar {
-        padding: 0 10px 20px 10px;
+        padding: 10px 10px 20px 10px;
     }
     .time {
         top: 89% !important;
@@ -2328,8 +2328,8 @@ span.glyphicon.glyphicon-user {
         margin-bottom: 2em;
     }
     .slider-top-grids {
-        /* width: 33.33% !important; */
-        width: 49.33% !important;
+        width: 33.33% !important;
+        /*         width: 49.33% !important; */
         float: left !important;
     }
     .side-bottom {
@@ -2337,7 +2337,7 @@ span.glyphicon.glyphicon-user {
         padding: 2em 0;
     }
     .drop-navigation {
-        display: none;
+        /* display: none; */
         margin-top: 1em;
     }
     .top-navigation {
@@ -2355,7 +2355,10 @@ span.glyphicon.glyphicon-user {
         margin: 0;
     }
     ul.nav.nav-sidebar li a {
-        padding: .8em 0 .8em 35em;
+        /* padding: .8em 0 .8em 2em; */
+        text-align: center;
+        font-size: 22px;
+        padding: 0.6em;
     }
     .sidebar {
         padding: 0;
@@ -2439,7 +2442,7 @@ span.glyphicon.glyphicon-user {
         width: 33%;
     }
     ul.nav.nav-sidebar li a {
-        padding: .8em 0 .8em 27em;
+        /*         padding: .8em 0 .8em 27em; */
     }
     .nav-sidebar ul li a {
         padding: .5em 0 .5em 31em !important;
@@ -2588,7 +2591,7 @@ span.glyphicon.glyphicon-user {
         padding: 0;
     }
     ul.nav.nav-sidebar li a {
-        padding: .8em 0 .8em 19em;
+        /*         padding: .8em 0 .8em 19em; */
     }
     .nav-sidebar ul li a {
         padding: .5em 0 .5em 26em !important;
@@ -2735,7 +2738,7 @@ span.glyphicon.glyphicon-user {
         width: 50%;
     }
     ul.nav.nav-sidebar li a {
-        padding: .8em 0 .8em 14em;
+        /*         padding: .8em 0 .8em 14em; */
     }
     .resent-grid-info p.author-info {
         font-size: 13px;
@@ -3083,4 +3086,9 @@ span.glyphicon.glyphicon-user {
     .footer-bottom ul li a.f-history {
         padding: .52em 1em .52em 3em;
     }
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
 }

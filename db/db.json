@@ -1,0 +1,21 @@
+{
+    "purchases": [
+        { "id": "1", "title": "BOE001_How_to_create_imported_PO", "video_url": "/BOE001.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "2", "title": "BOE002_How_to_create_BOE", "video_url": "/BOE002.wmv", "poster": "./static/images/OM005.jpg", "length": "1:09" },
+        { "id": "3", "title": "BOE003_How_to_apply_BOE_to_GRN", "video_url": "/BOE003.wmv", "poster": "./static/images/OM007.jpg", "length": "1:09" },
+        { "id": "4", "title": "BOE004_How_to_pay_for_BOE", "video_url": "/BOE004.wmv", "poster": "./static/images/OM009.jpg", "length": "1:09" },
+        { "id": "5", "title": "PO001_How to create Purchase Requisition", "video_url": "/PO001.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "6", "title": "PO002_How to approve Purchase Requisition", "video_url": "/PO002.wmv", "poster": "./static/images/OM005.jpg", "length": "1:09" },
+        { "id": "7", "title": "PO003_How to auto generate PO from approved PR", "video_url": "/PO003.wmv", "poster": "./static/images/OM007.jpg", "length": "1:09" },
+        { "id": "8", "title": "PO004_How to manually create PO", "video_url": "/PO004.wmv", "poster": "./static/images/OM009.jpg", "length": "1:09" },
+        { "id": "9", "title": "PO005_How to insert Tax for PO", "video_url": "/PO005.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "10", "title": "PO006_How to approve PO", "video_url": "/PO0 06.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "11", "title": "PO007_How to create GRN for PO", "video_url": "/PO007.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "12", "title": "PO008_01_How to inspect goods", "video_url": "/PO008_01.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "13", "title": "PO008_02_How to receive goods to inventory", "video_url": "/PO008_02.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "14", "title": "PO008_03_How to check receiving transaction summary", "video_url": "/PO008_03.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "15", "title": "PO009_01_How to create invoice and insert tax for GRN", "video_url": "/PO009_01.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "16", "title": "PO009_02_How to validate PO invoice and create accounting", "video_url": "/PO009_02.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" },
+        { "id": "17", "title": "PO009_03_How to pay for invoice", "video_url": "/PO009_03.wmv", "poster": "./static/images/BOM001.jpg", "length": "1:09" }
+    ]
+}
