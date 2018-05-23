@@ -1,6 +1,10 @@
-# ebslearning
+# EBSLearning
 
 > EBS tutorial video hosting website for Highly India
+
+## Tech Stack
+
+> Vue + Vue-resource + bootstrap + json-server + serve
 
 ## Build Setup
 
@@ -20,6 +24,3 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## Tech Stack
-
-# Vue + Vue-resource + bootstrap + json-server + serve
