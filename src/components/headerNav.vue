@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="index.html">
-                <h1><img :src="logoSrc" alt="Highly_Logo" width="153" height="49" /></h1>
+                <h1><img :src="logoSrc" alt="Highly_Logo" width="186" height="49" /></h1>
             </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
