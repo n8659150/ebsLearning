@@ -466,6 +466,8 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 
 .resent-grid a img {
     width: 100%;
+    box-shadow: 0px 0 2px #C1C1C1 !important;
+    /* border: 1px solid #ccc; */
 }
 
 .time {
@@ -641,7 +643,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 
 .resent-grid-info a.title-info {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .recommended-grid-info p.author {

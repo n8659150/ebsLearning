@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="index.html">
-                <h1><img src="../../static/images/logo.png" alt="Highly_Logo" width="153" height="49" /></h1>
+                <h1><img :src="logoSrc" alt="Highly_Logo" width="153" height="49" /></h1>
             </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -38,7 +38,7 @@ export default {
   name: "headerNav",
   data() {
     return {
-      msg: ""
+      logoSrc: require('../../static/images/logo.png')
     };
   }
 };
@@ -99,7 +99,7 @@ form.navbar-form.navbar-right {
 }
 
 .top-search form input[type="submit"] {
-    background: url('../assets/search_icon.png') no-repeat 0px 0px !important;
+    background: url('../../static/images/search_icon.png') no-repeat 0px 0px !important;
     width: 18px !important;
     height: 18px !important;
     border: none !important;

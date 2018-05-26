@@ -1,125 +1,50 @@
 <template>
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="main-grids">
-            <div class="top-grids">
-              <div class="recommended-info">
-                    <h3>Payables</h3>
-                </div>
-                <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
+        <div class="top-grids">
+            <div class="recommended-info">
+                <h3>Payables</h3>
+            </div>
+            <div class="flex-wrap"> 
+                <div v-for="(data,key) in purchases_dataset" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
                     <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img src="../../assets/BOM001.jpg" alt="" /></a>
-                        <div class="time">
-                            <p>3:04</p>
+                        <a href="single.html"><img :src="data['poster']" :alt="data['title']" /></a>
+                        <div class="time" style="color:#000;">
+                            <p>{{data['length']}}</p>
                         </div>
-                        <div class="clck">
+                        <!-- <div class="clck" style="color:#000;">
                             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">BOM001_How_to_create_a_routing</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                    <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img src="../../assets/PO003.jpg" alt="" /></a>
-                        <div class="time">
-                            <p>3:04</p>
-                        </div>
-                        <div class="clck">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">PO003_How to auto generate PO from approved PR</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                    <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img src="../../assets/OM005.jpg" alt="" /></a>
-                        <div class="time">
-                            <p>3:04</p>
-                        </div>
-                        <div class="clck">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">OM005_1_How to launch pick release</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                    <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img src="../../assets/OM007.jpg" alt="" /></a>
-                        <div class="time">
-                            <p>3:04</p>
-                        </div>
-                        <div class="clck">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">OM007_How to insert taxes on the invoice</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                    <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img src="../../assets/OM009.jpg" alt="" /></a>
-                        <div class="time">
-                            <p>3:04</p>
-                        </div>
-                        <div class="clck">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">OM009_How to get GST invoice number and print GST invoice</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                    <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img src="../../assets/PO005.jpg" alt="" /></a>
-                        <div class="time">
-                            <p>3:04</p>
-                        </div>
-                        <div class="clck">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                    <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">PO005_How to insert Tax for PO</a></h3>
+                        <h3><a href="single.html" class="title title-info">{{data['title']}}</a></h3>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
+// import purchases_data from '../../video_source_config/purchases.js'
 export default {
-  name: "payables",
-  data() {
+  name: 'payables',
+  data () {
     return {
-      msg: "Welcome to Your Vue.js App"
-    };
+      purchases_dataset: ''
+    }
+  },
+  mounted(){
+    this.$http.get('http://localhost:3000/purchases').then((response)=>{
+        this.purchases_dataset = response.body;
+    },(error) =>{
+        console.log(error);
+    })
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>

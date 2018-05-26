@@ -4,7 +4,7 @@
         <div class="top-navigation">
             <div class="t-menu">MENU</div>
             <div class="t-img" @click="toggleNav(isNavOpen)">
-                <img src="../assets/lines.png" alt="" />
+                <img :src="sidebarLineSrc" alt="sidebar" />
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       isNavOpen:true,
+      sidebarLineSrc:require('../../static/images/lines.png'),
       menuItems: [
         {
           name: "Home",
