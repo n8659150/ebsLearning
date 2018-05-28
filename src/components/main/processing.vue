@@ -6,7 +6,7 @@
                 <h3>Processing</h3>
             </div>
             <div class="flex-wrap"> 
-                <div v-for="(data,key) in purchases_dataset" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
+                <div v-for="(data,key) in processing_dataset" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
                     <div class="resent-grid-img recommended-grid-img">
                         <a href="single.html"><img :src="data['poster']" :alt="data['title']" /></a>
                         <div class="time" style="color:#000;">
@@ -32,12 +32,12 @@ export default {
   name: 'Processing',
   data () {
     return {
-      purchases_dataset: ''
+      processing_dataset: ''
     }
   },
   mounted(){
-    this.$http.get('http://localhost:3000/purchases').then((response)=>{
-        this.purchases_dataset = response.body;
+    this.fetchData('processing').then((response)=>{
+        this.processing_dataset = response.body;
     },(error) =>{
         console.log(error);
     })

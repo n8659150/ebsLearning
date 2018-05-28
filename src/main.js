@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
+import api from './video_source_config/api.js'
+Vue.use(api);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
