@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted(){
-    this.$http.get('http://localhost:3000/home').then((response)=>{
+    this.fetchData('home').then((response)=>{
         this.home_dataset = response.body;
     },(error) =>{
         console.log(error);
