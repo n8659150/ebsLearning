@@ -40,6 +40,13 @@ export default {
     return {
       logoSrc: require('../../static/images/logo.png')
     };
+  },
+  mounted(){
+      this.fetchData('sales').then((response)=>{
+        console.log(response.body);
+    },(error) =>{
+        console.log(error);
+    })
   }
 };
 </script>
