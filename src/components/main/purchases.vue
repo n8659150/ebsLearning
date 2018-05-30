@@ -17,7 +17,7 @@
                         </div> -->
                     </div>
                     <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="single.html" class="title title-info">{{data['title']}}</a></h3>
+                        <h3><router-link :to="'/video/' + data['id']" class="title title-info">{{data['title']}}</router-link></h3>
                     </div>
                 </div>
             </div>
