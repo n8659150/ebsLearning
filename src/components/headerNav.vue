@@ -16,8 +16,8 @@
       <div id="navbar" class="navbar-collapse collapse">
         <div class="top-search">
             <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search...">
-                <input type="submit" value=" ">
+                <input type="text" v-model="keywords" class="form-control" placeholder="Search...">
+                <button @click="fuzzyQuery()"></button>
             </form>
         </div>
          <!-- <div class="header-top-right">
@@ -38,15 +38,23 @@ export default {
   name: "headerNav",
   data() {
     return {
-      logoSrc: require('../../static/images/logo.png')
+      logoSrc: require('../../static/images/logo.png'),
+      keywords:'Search anything'
     };
   },
+<<<<<<< HEAD
   mounted(){
       this.fetchData('sales').then((response)=>{
         console.log(response.body);
     },(error) =>{
         console.log(error);
     })
+=======
+  methods:{
+      fuzzyQuery:function(){
+          this.$router.push({path: '/results', query: {keywords: this.keywords}})
+      }
+>>>>>>> dev
   }
 };
 </script>
@@ -105,7 +113,7 @@ form.navbar-form.navbar-right {
     border: 1px solid #ccc;
 }
 
-.top-search form input[type="submit"] {
+.top-search form button {
     background: url('../../static/images/search_icon.png') no-repeat 0px 0px !important;
     width: 18px !important;
     height: 18px !important;
