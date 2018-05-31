@@ -3,7 +3,7 @@
     <div class="main-grids">
         <div class="top-grids">
             <div class="recommended-info">
-                <h3>Most Viewed</h3>
+                <h3>Home</h3>
             </div>
             <div class="flex-wrap"> 
                 <div v-for="(data,key) in home_dataset" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
@@ -31,15 +31,30 @@ export default {
   name: "home",
   data() {
     return {
-      home_dataset: ''
+      home_dataset: ""
+    };
+  },
+  methods: {
+    initData: async function() {
+      try {
+        let result = await this.fetchData("home");
+        this.home_dataset = result.body;
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
-  mounted(){
-    this.fetchData('home').then((response)=>{
-        this.home_dataset = response.body;
-    },(error) =>{
-        console.log(error);
-    })
+  mounted() {
+    //    (async function(_this){
+    //       let result = await _this.fetchData('home');
+    //       console.log(result);
+    //   })(this)
+    this.initData();
+    // this.fetchData('home').then((response)=>{
+    //     this.home_dataset = response.body;
+    // },(error) =>{
+    //     console.log(error);
+    // })
   }
 };
 </script>

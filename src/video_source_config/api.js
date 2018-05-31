@@ -5,13 +5,10 @@ export default {
             Vue.prototype.fetchData = function(category) {
                 const url = 'http://' + this.applicationHost + '/' + category;
                 return Vue.http.get(url)
-<<<<<<< HEAD
-=======
             },
             Vue.prototype.fuzzyQuery = function(keywords) {
                 const url = 'http://' + this.applicationHost + '/all?q=' + keywords;
                 return Vue.http.get(url)
->>>>>>> dev
             }
     }
 }

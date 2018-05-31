@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "payables",
+  name: "results",
   data() {
     return {
       searchResults: ""
@@ -36,26 +36,21 @@ export default {
   },
   watch: {
     $route() {
-      this.fuzzyQuery(this.$route.query["keywords"]).then(
-        response => {
-          this.searchResults = response.body;
-        },
-        error => {
-          console.log(error);
-        }
-      );
+      this.search(this.$route.query["keywords"]);
     }
   },
-
-  mounted() {
-    this.fuzzyQuery(this.$route.query["keywords"]).then(
-      response => {
-        this.searchResults = response.body;
-      },
-      error => {
+  methods: {
+    search: async function(keywords) {
+      try {
+        let result = await this.fuzzyQuery(keywords);
+        this.searchResults = result.body;
+      } catch (error) {
         console.log(error);
       }
-    );
+    }
+  },
+  mounted() {
+    this.search(this.$route.query["keywords"]);
   }
 };
 </script>

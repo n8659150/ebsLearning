@@ -35,12 +35,18 @@ export default {
       sales_dataset: ''
     }
   },
-  mounted(){
-    this.fetchData('sales').then((response)=>{
-        this.sales_dataset = response.body;
-    },(error) =>{
+  methods: {
+    initData: async function() {
+      try {
+        let result = await this.fetchData("sales");
+        this.sales_dataset = result.body;
+      } catch (error) {
         console.log(error);
-    })
+      }
+    }
+  },
+  mounted(){
+    this.initData();
   }
 }
 </script>

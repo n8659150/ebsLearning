@@ -35,12 +35,18 @@ export default {
       receivables_dataset: ''
     }
   },
-  mounted(){
-    this.fetchData('receivables').then((response)=>{
-        this.receivables_dataset = response.body;
-    },(error) =>{
+  methods: {
+    initData: async function() {
+      try {
+        let result = await this.fetchData("receivables");
+        this.receivables_dataset = result.body;
+      } catch (error) {
         console.log(error);
-    })
+      }
+    }
+  },
+  mounted(){
+    this.initData();
   }
 }
 </script>

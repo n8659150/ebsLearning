@@ -29,20 +29,26 @@
 <script>
 // import purchases_data from '../../video_source_config/purchases.js'
 export default {
-  name: 'Processing',
-  data () {
+  name: "Processing",
+  data() {
     return {
-      processing_dataset: ''
+      processing_dataset: ""
+    };
+  },
+  methods: {
+    initData: async function() {
+      try {
+        let result = await this.fetchData("processing");
+        this.processing_dataset = result.body;
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
-  mounted(){
-    this.fetchData('processing').then((response)=>{
-        this.processing_dataset = response.body;
-    },(error) =>{
-        console.log(error);
-    })
+  mounted() {
+    this.initData();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
