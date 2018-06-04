@@ -35,14 +35,17 @@ export default {
       purchases_dataset: ""
     };
   },
-  initData: async function() {
-    try {
-      let result = await this.fetchData("purchases");
-      this.purchases_dataset = result.body;
-    } catch (error) {
-      console.log(error);
+  methods:{
+    initData: async function() {
+      try {
+        let result = await this.fetchData("purchases");
+        this.purchases_dataset = result.body;
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
+  
   mounted() {
     this.initData();
   }

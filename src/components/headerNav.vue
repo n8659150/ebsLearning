@@ -115,13 +115,13 @@ form.navbar-form.navbar-right {
     right: 26px;
 }
 @media (max-width: 640px) {
-.top-search form input[type="submit"] {
+.top-search form input[type="submit"],.top-search form button {
     right: 26px;
     top: 18px;
     }
 }
 @media (max-width: 767px) {
-.top-search form input[type="submit"] {
+.top-search form input[type="submit"],.top-search form button {
     right:26px;
     top:18px;
     } 

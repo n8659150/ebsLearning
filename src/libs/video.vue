@@ -172,8 +172,7 @@ video::-webkit-media-controls-enclosure {
         <div class="container" style="padding-left:0;padding-right:50px;">
             <div class="__cov-video-container" @mouseenter="mouseEnterVideo" @mouseleave="mouseLeaveVideo">
                 <video :class="{ 'hide-cursor': !state.contrlShow }" class="__cov-video" :poster="options.poster">
-                    <source v-for="source in sources" :src="source.src" :type="source.type">
-                    </source>
+                    <source :src="sources[0].src" :type="sources[0].type">
                 </video>
                 <div class="__cov-contrl-content" transition="fade" v-show="state.contrlShow">
                     <button class="__cov-contrl-play-btn" @click="play">
