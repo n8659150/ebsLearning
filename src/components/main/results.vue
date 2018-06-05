@@ -8,7 +8,7 @@
             <div class="flex-wrap"> 
                 <div v-for="(data,key) in searchResults" :key="key" class="col-md-4 resent-grid recommended-grid slider-top-grids">
                     <div class="resent-grid-img recommended-grid-img">
-                        <a href="single.html"><img :src="data['poster']" :alt="data['title']" /></a>
+                        <a><img :src="data['poster']" :alt="data['title']" /></a>
                         <div class="time" style="color:#000;">
                             <p>{{data['length']}}</p>
                         </div>

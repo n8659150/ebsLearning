@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <h1><img :src="logoSrc" alt="Highly_Logo" width="186" height="49" /></h1>
             </a>
       </div>
