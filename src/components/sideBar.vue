@@ -117,6 +117,12 @@ export default {
     display:block !important;
   }
 }
+@media (max-width: 991px) {
+  .glyphicon {
+    display:none !important;
+  }
+}
+
 /* .nav-sidebar ul.cl-effect-1 li,
 .nav-sidebar ul.subMenu li a {
   color: #bbb;

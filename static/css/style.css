@@ -2681,9 +2681,6 @@ span.glyphicon.glyphicon-user {
 }
 
 @media (max-width: 480px) {
-    a.navbar-brand img {
-        width: 100%;
-    }
     .file a {
         font-size: 12px;
     }
