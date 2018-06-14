@@ -114,6 +114,18 @@ form.navbar-form.navbar-right {
     top: 9px;
     right: 26px;
 }
+
+@media (max-width: 320px) {
+.top-search form input[type="submit"],.top-search form button {
+    right: 10px !important;
+    top: 9px !important;
+    }
+h1 img {
+    width:93px !important;
+    height:24px !important;
+    }
+}
+
 @media (max-width: 640px) {
 .top-search form input[type="submit"],.top-search form button {
     right: 26px;

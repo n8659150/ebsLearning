@@ -123,6 +123,11 @@ export default {
   }
 }
 
+@media (max-width:320px) {
+  ul.nav.nav-sidebar li a {
+    padding:0.6em !important;
+  }
+}
 /* .nav-sidebar ul.cl-effect-1 li,
 .nav-sidebar ul.subMenu li a {
   color: #bbb;
